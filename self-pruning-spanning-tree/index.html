@@ -20,7 +20,7 @@
 
 <p style="text-align: right"><i><a href="https://frank.lynam.website">Frank Lynam</a></i></p>
 
-<p>This is a fairly introductory article about graph theory and how I used it to find all possible attack paths in an attack graph. I won't be talking about how we constructed the attack graphs, but you can read more about that in the papers we wrote <a href="https://github.com/trace/mitre/docs" title="A bunch of papers I wrote with my colleagues at MITRE">here</a>. I will be talking about <a href="https://github.com/frank-lynam/self-pruning-spanning-tree">the algorithm I developed to solve this</a> and how it works. I have no idea if it's novel, but it was faster and gave more complete answers than anything else I could readily find.</p>
+<p>This is a fairly introductory article about graph theory and how I used it to find all possible attack paths in an attack graph. I won't be talking about how we constructed the attack graphs, but you can read more about that in the papers we wrote <a href="https://github.com/mitre/trace/tree/main/docs" title="A bunch of papers I wrote with my colleagues at MITRE">here</a>. I will be talking about <a href="https://github.com/frank-lynam/self-pruning-spanning-tree">the algorithm I developed to solve this</a> and how it works. I have no idea if it's novel, but it was faster and gave more complete answers than anything else I could readily find.</p>
 
 <p><i>Disclaimer: I'm a nuclear engineer, not a computer scientist. This is about gaining an intuitive understanding of concepts, not about formal proofs. Sorry! Also, this is a blog, not a formal technical paper.</i></p>
 
@@ -397,6 +397,8 @@ x=[...Array(5)].forEach((x,i)=>document.getElementById(`figure_${i+2}`)
   .addEventListener("touchend",()=>{update_figures(figures[i+2])}))
 
 </script>
+
+<span style="position: fixed; bottom: 0; right: 0; font-size: x-small">(c) Frank Lynam, 2025, All Rights Reserved</span>
 
 </body>
 
