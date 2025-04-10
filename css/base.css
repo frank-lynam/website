@@ -16,11 +16,11 @@ body {
   background: var(--bgc);
   color: var(--fgc);
   font-size: normal;
-  margin: 0px auto;
+  margin: 0 auto;
   height: 100%;
   font-family: sans-serif;
   max-width: 40em;
-  padding-bottom: 20em;
+  padding: 1em 1em 20em 1em;
 }
 
 @media (orientation: portrait) {
@@ -44,7 +44,7 @@ input[type=range] {
 }
 
 p {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 h1 {
