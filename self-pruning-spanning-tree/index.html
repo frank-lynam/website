@@ -26,13 +26,13 @@
 
 <h2>The Problem</h2>
 
-<p>So, we had developed a conceptual model of adversarial movement through networks and systems. Basically, a state machine describing steps like "find an interface that talks to you" and "get it to let you run code" and "use that to break the computer." Like <a href="https://xkcd.com/327/">little Bobby tables</a>. We applied that to a painstakingly-developed network architecture and glued <i>that</i> onto a good understanding of which computers were connected to critical system functions, all for some key chunks of <a href="https://www.acq.osd.mil/ncbdp/nm/NMHB2020rev/docs/NMHB2020rev.pdf" title="The official unofficial guide to nuclear weapons">fairly complicated nuclear weapons control system</a>.</p>
+<p>So, we had developed a conceptual model of adversarial movement through networks and systems. Basically, a state machine describing steps like "find an interface that talks to you" and "get it to let you run code" and "use that to break the computer." Like <a target="_blank" href="https://xkcd.com/327/">little Bobby tables</a>. We applied that to a painstakingly-developed network architecture and glued <i>that</i> onto a good understanding of which computers were connected to critical system functions, all for some key chunks of <a target="_blank" href="https://www.acq.osd.mil/ncbdp/nm/NMHB2020rev/docs/NMHB2020rev.pdf" title="The official unofficial guide to nuclear weapons">fairly complicated nuclear weapons control system</a>.</p>
 
 <p>Now we had a big, messy graph that, in theory, contained all the possible routes a dedicated adversary could possibly take to disrupt your mission, whether those exploits existed in the wild yet or not. When you're talking about defending nuclear weapons systems, "maybe they'll develop novel exploits in our top secret software running on hardware that no one else has" is definitely "in scope."</p>
 
 <p>Which leads us to the problem we had to solve, given the data we'd collected: when your directed, cyclic graph has a thousand nodes and a few tens of thousands of connections across different technology stacks and communication paths, how do you measure risk? Particularly, how do you measure it in a way that lets you figure out how to make that risk go down?</p>
 
-<p>The short answer there was that we were able to look at historical vulnerability discovery data, leveraging MITRE's <a href="https://cve.mitre.org">CVE repository</a>, to make reasonable estimates for how long a peer nation state adversary would take to develop novel vulnerabilities. That let us estimate how long it would take to develop any given path using exclusively zero-day exploits: our baseline threat model given our system criticality.</p>
+<p>The short answer there was that we were able to look at historical vulnerability discovery data, leveraging MITRE's <a target="_blank" href="https://cve.mitre.org">CVE repository</a>, to make reasonable estimates for how long a peer nation state adversary would take to develop novel vulnerabilities. That let us estimate how long it would take to develop any given path using exclusively zero-day exploits: our baseline threat model given our system criticality.</p>
 
 <p>Honestly, this should all feel, like, super "duh." And it is! Nonetheless, it feels much more proactive than "install the latest patches."</p>
 
@@ -40,7 +40,7 @@
 
 <h2>Graph Theory</h2>
 
-<p>Graph theory is about relationships between things. Typically, we abstract "things" as nodes (circles) and "relationships" as edges (lines), <a href="https://github.com/visjs/vis-network" title="I will be using the absolutely lovely Vis Network">like so</a>:
+<p>Graph theory is about relationships between things. Typically, we abstract "things" as nodes (circles) and "relationships" as edges (lines), <a target="_blank" href="https://github.com/visjs/vis-network" title="I will be using the absolutely lovely Vis Network">like so</a>:
 
 <div id="figure_1" class="net"></div>
 
@@ -84,7 +84,7 @@
 
 <h2>Spanning Trees</h2>
 
-<p>I don't know why I call them spanning trees, they aren't <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)" title="Wikipedia knows about trees">trees</a>, which are undirected acyclic graphs. These are just directed acyclic graphs. But "self-pruning spanning directed acyclic graphs" produces a less compelling visual, I guess.</p>
+<p>I don't know why I call them spanning trees, they aren't <a target="_blank" href="https://en.wikipedia.org/wiki/Tree_(graph_theory)" title="Wikipedia knows about trees">trees</a>, which are undirected acyclic graphs. These are just directed acyclic graphs. But "self-pruning spanning directed acyclic graphs" produces a less compelling visual, I guess.</p>
 
 <p>Regardless, the "spanning" part is the idea of starting at a node in a graph and spanning out from it to see where you can go. For us, that means starting at all our sources.</p>
 
@@ -100,7 +100,7 @@
 
 <p>"Frank, sometimes it doesn't stop when it finds the sink! This algorithm is dumb and bad."</p>
 
-<p>You're right! Remember what I said about threat models and risk? We don't want to only think about the shortest path between two points; we want to assess <i>all</i> routes. Often, the best way to compromise a system is <a href="https://www.csoonline.com/article/562691/stuxnet-explained-the-first-known-cyberweapon.html" title="Compromising the entire world is certainly an indirect route">a weird side path</a> you don't think they'll be paying attention to, even if it's 10x harder. We want to see those, too, and account for them. We want all paths, and so we keep going until we run out of roads.</p>
+<p>You're right! Remember what I said about threat models and risk? We don't want to only think about the shortest path between two points; we want to assess <i>all</i> routes. Often, the best way to compromise a system is <a target="_blank" href="https://www.csoonline.com/article/562691/stuxnet-explained-the-first-known-cyberweapon.html" title="Compromising the entire world is certainly an indirect route">a weird side path</a> you don't think they'll be paying attention to, even if it's 10x harder. We want to see those, too, and account for them. We want all paths, and so we keep going until we run out of roads.</p>
 
 <p>So, this is the useful part of the algorithm: we span the opposite way through that tree, from the sinks to the sources. Honestly, I don't really care if it's novel, but it's proven useful, fast and simple enough for me to toss together to solve a few different problems. And easy to implement in a variety of languages: I've used it in C, python and JavaScript.</p>
 
@@ -398,7 +398,7 @@ x=[...Array(5)].forEach((x,i)=>document.getElementById(`figure_${i+2}`)
 
 </script>
 
-<span style="position: fixed; bottom: 0; right: 0; font-size: x-small">(c) Frank Lynam, 2025, All Rights Reserved</span>
+<span style="position: fixed; bottom: 0; right: 0; font-size: x-small">&copy; 2025 Frank Lynam. All Rights Reserved.</span>
 
 </body>
 
