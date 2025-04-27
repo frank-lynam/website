@@ -120,6 +120,8 @@
 
 <p>Just a convenient little algorithm, nothing exciting. It is easy to implement, and easy to understand, gives all the paths, and seemed to be faster than any of the pre-packaged alternatives I found at the time.</p>
 
+<p>The approach can be thought of most simply as: spread out down every route you can from every starting point you're allowed to start from. Now, using all those paths you just found, start from every end point you wanted to reach and <i>only</i> walk backwards down those same paths. Now you're guaranteed to have a map that contains every route from all your starting points to all your end points, with no dead ends.</p>
+
 <p>For the attack path math, we could apply our numerical model to this subgraph and get a correct answer without having to compute any irrelevant paths, which was useful to reduce computation time. I've also used a variant of it for cyclic checks when managing nested groups, and a few other random places where it was nice to be able to extract a meaningful subgroup.</p>
 
 <script type="text/javascript">
